@@ -4,9 +4,9 @@
         color: #fff;
     }
     hr {
-        background: green;
+        background: blue;
         border: 0;
-        height: 1px;
+        height: 3px;
         margin: 1em 0em 1.5em -10em;
     }
 }
