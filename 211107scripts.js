@@ -1,13 +1,17 @@
-// this is a very basic die roller. the objective is to be able to understand the basics
-function rollxDyz(diceRolls,diceType,modifier01) {
-    // Return total of six-sided dice rolls.
-        var total = 0;
-    for (var i = 0; i < diceRolls; i++) {
-        total += Math.floor(Math.random() * diceType + 1);
+function rollxDyzaAA (diceRolls, diceType, multiplier, modifier) {
+var total = 0; 
+for (var i = 1; i <= diceRolls; i++) {
+    var roll = Math.floor(Math.random() * diceType +1);
+    console.log('roll ' + i + ' was a ' + roll);
+    
+    total += roll; 
+    
+    if (roll == diceType) {
+        console.log('->rolling an extra exploding dice');
+        diceRolls++;
     }
-  var sum = total +  modifier01;
-  var msg = '**'+ sum + '** ([' + diceRolls +'D' + diceType + '] + ' + modifier01 + ')';
-  return msg;
 }
-
-console.log(rollxDyz(3, 6, -10))
+total = (total * multiplier) + modifier;
+return Math.floor(total)
+}
+console.log(rollxDyzaAA(3,6,0.5,1));
